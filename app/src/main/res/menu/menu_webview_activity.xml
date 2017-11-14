@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:icon="@drawable/ic_navigate_previous_black_24dp"
+        android:id="@+id/previous"
+        app:showAsAction="always"
+        android:title="@string/previous"
+        />
+
+
+    <item
+        android:icon="@drawable/ic_navigate_next_black_24dp"
+        android:id="@+id/next"
+        app:showAsAction="always"
+        android:title="@string/next"
+        />
+
+</menu>

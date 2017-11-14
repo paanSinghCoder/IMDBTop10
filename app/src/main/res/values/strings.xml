@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">IMDB Top 10</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_by_title">Search by Title</string>
+    <string name="not_found">Not found</string>
+    <string name="delete_table">Delete Table</string>
+    <string name="top_10_movies_everyday">Top 10 Movies. Everyday.</string>
+    <string name="get_started">Get Started</string>
+    <string name="terms">By clicking, you agree to the Terms of use.</string>
+    <string name="made_in">Made with ❤ and ☕ in Pune</string>
+    <string name="another_fragment_by_gaurav">Another Fragment by Gaurav</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="year_placeholder">1994</string>
+    <string name="rating_placeholder">9.3</string>
+    <string name="search">Search</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+</resources>

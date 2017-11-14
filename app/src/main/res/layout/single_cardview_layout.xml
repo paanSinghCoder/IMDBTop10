@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="700px"
+        android:layout_below="@+id/toolbar_main"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/cardView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imagePoster"
+                android:layout_width="140dp"
+                android:layout_height="210dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="13dp"
+                app:srcCompat="@drawable/poster_placeholder" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imagePoster"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_toEndOf="@+id/imagePoster"
+                android:fontFamily="@font/varela_round"
+                android:text="@string/placeholder"
+                android:textSize="18sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/textYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textTitle"
+                android:layout_below="@+id/textTitle"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/varela_round"
+                android:text="@string/year_placeholder"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textYear"
+                android:layout_below="@+id/textYear"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/star" />
+
+            <TextView
+                android:id="@+id/TextRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageStar"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/imageStar"
+                android:fontFamily="@font/varela_round"
+                android:text="@string/rating_placeholder"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textBigRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_alignTop="@+id/imagePoster"
+                android:layout_alignStart="@+id/textTitle"
+                android:maxLines="1"
+                android:text="@string/rating_placeholder"
+                android:textColor="#f1f1f1"
+                android:textSize="150sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+</android.support.constraint.ConstraintLayout>
