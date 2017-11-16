@@ -1,6 +1,5 @@
 package com.topten.grv.imdbtop10;
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
@@ -8,17 +7,12 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
+
 import com.topten.grv.imdbtop10.adapter.CustomSearchListAdapter;
 import com.topten.grv.imdbtop10.adapter.DatabaseHelper;
 
@@ -67,6 +61,7 @@ public class SearchActivity extends AppCompatActivity {
                 myDB = new DatabaseHelper(SearchActivity.this);
 
                 data = myDB.searchRecord(query);//Sends search term to database helper which returns all data found according to the search term
+                //Toasty.error(SearchActivity.this, data.toString(), Toast.LENGTH_SHORT, true);
 
                 if (data==null){
                     //textViewMessage.setVisibility(View.VISIBLE);
@@ -93,14 +88,14 @@ public class SearchActivity extends AppCompatActivity {
             }
 
             private void searchResultMethod() {
-                if(data.getCount() == 0)
+                if(data == null)
                 {
                     Toast toastem = Toasty.warning(SearchActivity.this, "Database is empty", Toast.LENGTH_SHORT, true);
                     toastem.setGravity(Gravity.TOP|Gravity.CENTER, 0, 0);
                     toastem.show();
                 }else
                 {
-                    while(data.moveToNext())
+                    do
                     {
                         //String s = new String(data.getString(0)).toString();
 
@@ -117,7 +112,7 @@ public class SearchActivity extends AppCompatActivity {
                         //Toast.makeText(getActivity(), arrayListUrl.get(i), Toast.LENGTH_SHORT).show();
                         //i++;
 
-                    }
+                    }while(data.moveToNext());
                 }
 
 

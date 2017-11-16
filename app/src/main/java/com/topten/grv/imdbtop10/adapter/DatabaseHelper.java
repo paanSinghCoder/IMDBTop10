@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -87,10 +85,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor searchRecord(String searchTerm)
     {
         db = this.getReadableDatabase();
-        String query ="SELECT  *  FROM " + TABLE_NAME + " WHERE title  LIKE  '%" + searchTerm + "%' OR '" + searchTerm + "%' OR '%" + searchTerm + "'";
-        //String q = "Select * from " + TABLE_NAME + " where title like '%" + replace(search_criteria, '%', '[%]') + '%'
+        String query ="SELECT  *  FROM " + TABLE_NAME + " WHERE title LIKE '%" + searchTerm + "%' OR '" + searchTerm + "%' OR '%" + searchTerm + "' COLLATE NOCASE";
+        //String q =
+
 
         Cursor c = db.rawQuery(query, null);
+
 
         if (c == null) {
             return null;
@@ -102,10 +102,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return c;
     }
 
-    public boolean deleteAll() {
+    public void deleteAll() {
         //SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
 
-        return true;
+        //return true;
     }
 }
